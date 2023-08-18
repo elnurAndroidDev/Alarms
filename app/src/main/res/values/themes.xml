@@ -3,6 +3,7 @@
     <style name="Base.Theme.Alarms" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="iconColor">@color/black</item>
     </style>
 
     <style name="Theme.Alarms" parent="Base.Theme.Alarms" />

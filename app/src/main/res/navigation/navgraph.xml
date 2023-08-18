@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/alarmsFragment">
+
+    <fragment
+        android:id="@+id/alarmsFragment"
+        android:name="com.isayevapps.alarms.AlarmsFragment"
+        android:label="Alarms"
+        tools:layout="@layout/fragment_alarms">
+        <action
+            android:id="@+id/goToAddAlarmFragment"
+            app:destination="@id/addAlarmFragment" />
+        <action
+            android:id="@+id/goToAlarmDetailFragment"
+            app:destination="@id/alarmDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAlarmFragment"
+        android:name="com.isayevapps.alarms.AddAlarmFragment"
+        android:label="Add alarm"
+        tools:layout="@layout/fragment_add_alarm" />
+    <fragment
+        android:id="@+id/alarmDetailFragment"
+        android:name="com.isayevapps.alarms.AlarmDetailFragment"
+        android:label="Edit alarm"
+        tools:layout="@layout/fragment_alarm_detail" />
+</navigation>
