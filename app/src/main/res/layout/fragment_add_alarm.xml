@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".AddAlarmFragment">
+    tools:context=".presentation.add.AddAlarmFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TimePicker
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start|center_vertical"
             android:text="Ringtone"
-            android:textSize="20sp" />
+            android:textAppearance="@style/SettingNameText" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -40,14 +40,18 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/ringtoneNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Default ringtone" />
+                android:layout_marginEnd="4dp"
+                android:textColor="@color/secondTextColor"
+                tools:text="Default ringtone" />
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/arrow_right_ico" />
+                android:src="@drawable/arrow_right_ico"
+                app:tint="?attr/iconColor" />
 
         </LinearLayout>
 
@@ -67,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start|center_vertical"
             android:text="Repeat"
-            android:textSize="20sp" />
+            android:textAppearance="@style/SettingNameText" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -77,13 +81,17 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/repeatFrequencyTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Once" />
+                android:layout_marginEnd="4dp"
+                android:textColor="@color/secondTextColor"
+                tools:text="Once" />
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                app:tint="?attr/iconColor"
                 android:src="@drawable/arrow_right_ico" />
 
         </LinearLayout>
@@ -105,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start|center_vertical"
             android:text="Vibrate when alarm sounds"
-            android:textSize="20sp" />
+            android:textAppearance="@style/SettingNameText" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/vibrateSwitch"
@@ -123,7 +131,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/label_group_shape"
-        android:backgroundTint="#6A6A6A"
+        android:backgroundTint="?attr/passiveColor"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -134,14 +142,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start|center_vertical"
             android:text="Label"
-            android:textSize="20sp" />
+            android:textAppearance="@style/SettingNameText" />
 
 
         <TextView
+            android:id="@+id/labelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
-            android:text="Enter label" />
+            android:text="Enter label"
+            android:textColor="@color/secondTextColor" />
 
     </FrameLayout>
 

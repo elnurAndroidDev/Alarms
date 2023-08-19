@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/alarmsFragment"
-        android:name="com.isayevapps.alarms.AlarmsFragment"
+        android:name="com.isayevapps.alarms.presentation.home.AlarmsFragment"
         android:label="Alarms"
         tools:layout="@layout/fragment_alarms">
         <action
@@ -19,12 +19,25 @@
     </fragment>
     <fragment
         android:id="@+id/addAlarmFragment"
-        android:name="com.isayevapps.alarms.AddAlarmFragment"
+        android:name="com.isayevapps.alarms.presentation.add.AddAlarmFragment"
         android:label="Add alarm"
-        tools:layout="@layout/fragment_add_alarm" />
+        tools:layout="@layout/fragment_add_alarm">
+        <action
+            android:id="@+id/openRepeatBottomSheetDialog"
+            app:destination="@id/repeatBottomSheet" />
+    </fragment>
     <fragment
         android:id="@+id/alarmDetailFragment"
-        android:name="com.isayevapps.alarms.AlarmDetailFragment"
+        android:name="com.isayevapps.alarms.presentation.details.AlarmDetailFragment"
         android:label="Edit alarm"
         tools:layout="@layout/fragment_alarm_detail" />
+    <dialog
+        android:id="@+id/repeatBottomSheet"
+        android:name="com.isayevapps.alarms.presentation.dialogs.RepeatBottomSheet"
+        android:label="RepeatBottomSheet"
+        tools:layout="@layout/repeat_bottom_sheet">
+        <argument
+            android:name="frequency"
+            app:argType="string" />
+    </dialog>
 </navigation>

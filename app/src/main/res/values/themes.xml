@@ -4,7 +4,13 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="iconColor">@color/black</item>
+        <item name="passiveColor">@color/passiveColorDay</item>
     </style>
 
     <style name="Theme.Alarms" parent="Base.Theme.Alarms" />
+
+    <style name="SettingNameText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/textColorDay</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>

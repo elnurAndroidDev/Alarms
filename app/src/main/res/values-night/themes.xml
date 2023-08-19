@@ -4,5 +4,11 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
         <item name="iconColor">@color/white</item>
+        <item name="passiveColor">@color/passiveColorNight</item>
+    </style>
+
+    <style name="SettingNameText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/textColorNight</item>
+        <item name="android:textSize">20sp</item>
     </style>
 </resources>

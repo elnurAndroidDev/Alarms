@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <FrameLayout
+        android:id="@+id/onceLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/passiveColor"
+        android:padding="16dp"
+        tools:background="@drawable/label_group_shape">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:text="Once"
+            android:textAppearance="@style/SettingNameText" />
+
+        <ImageView
+            android:id="@+id/onceTick"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/tick_ico"
+            android:visibility="invisible"
+            app:tint="?attr/iconColor"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/dailyLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="?attr/passiveColor"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:text="Daily"
+            android:textAppearance="@style/SettingNameText" />
+
+        <ImageView
+            android:id="@+id/dailyTick"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/tick_ico"
+            android:visibility="invisible"
+            app:tint="?attr/iconColor" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/weekdaysLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="?attr/passiveColor"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:text="Mon to Fri"
+            android:textAppearance="@style/SettingNameText" />
+
+        <ImageView
+            android:id="@+id/weekdaysTick"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/tick_ico"
+            android:visibility="invisible"
+            app:tint="?attr/iconColor" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/customLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="?attr/passiveColor"
+        android:padding="16dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:text="Custom"
+            android:textAppearance="@style/SettingNameText" />
+
+        <ImageView
+            android:id="@+id/customTick"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/tick_ico"
+            android:visibility="invisible"
+            app:tint="?attr/iconColor" />
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,7 +1,6 @@
-package com.isayevapps.alarms
+package com.isayevapps.alarms.presentation.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -12,6 +11,7 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
+import com.isayevapps.alarms.R
 import com.isayevapps.alarms.databinding.FragmentAlarmsBinding
 
 

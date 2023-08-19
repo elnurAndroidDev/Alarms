@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="passiveColorDay">#D8D8D8</color>
+    <color name="passiveColorNight">#5C5C5C</color>
+
+    <color name="textColorDay">@color/black</color>
+    <color name="textColorNight">@color/white</color>
+
+    <color name="secondTextColor">#979797</color>
 </resources>
