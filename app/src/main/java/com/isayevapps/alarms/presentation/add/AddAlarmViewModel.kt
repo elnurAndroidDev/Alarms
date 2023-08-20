@@ -2,6 +2,7 @@ package com.isayevapps.alarms.presentation.add
 
 import androidx.lifecycle.ViewModel
 import com.isayevapps.alarms.presentation.models.Alarm
+import com.isayevapps.alarms.presentation.models.Time
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -26,6 +27,13 @@ class AddAlarmViewModel : ViewModel() {
     fun setRepeat(frequency: String) {
         _alarm.update { oldValue ->
             oldValue.copy(repeat = frequency)
+        }
+    }
+
+    fun setTime(hours: Int, mins: Int) {
+        val time = Time(hours, mins)
+        _alarm.update { oldValue ->
+            oldValue.copy(time = time)
         }
     }
 

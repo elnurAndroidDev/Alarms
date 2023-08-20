@@ -60,6 +60,10 @@ class AddAlarmFragment : Fragment() {
             )
         }
 
+        binding.timePicker.setOnTimeChangedListener { _, hours, mins ->
+            viewModel.setTime(hours, mins)
+        }
+
         binding.labelLinearLayout.setOnClickListener {
             findNavController().navigate(
                 AddAlarmFragmentDirections.openLabelBottomSheetDialog(
@@ -103,6 +107,10 @@ class AddAlarmFragment : Fragment() {
     }
 
     private fun updateUI(alarm: Alarm) {
+        binding.timePicker.apply {
+            hour = alarm.time.hours
+            minute = alarm.time.mins
+        }
         binding.ringtoneNameTextView.text = alarm.ringtone
         binding.repeatFrequencyTextView.text = alarm.repeat
         binding.labelTextView.text = if (alarm.label == "") "Enter label" else alarm.label
