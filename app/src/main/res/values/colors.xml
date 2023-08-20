@@ -3,6 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="my_light_primary">#0091EA</color>
+    <color name="my_dark_primary">#2962FF</color>
+
     <color name="passiveColorDay">#D8D8D8</color>
     <color name="passiveColorNight">#5C5C5C</color>
 

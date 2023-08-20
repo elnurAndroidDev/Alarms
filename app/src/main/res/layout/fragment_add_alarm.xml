@@ -119,7 +119,8 @@
             android:id="@+id/vibrateSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end|center_vertical" />
+            android:layout_gravity="end|center_vertical"
+            tools:checked="true"/>
 
     </FrameLayout>
 

@@ -19,6 +19,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.isayevapps.alarms.R
 import com.isayevapps.alarms.databinding.FragmentAddAlarmBinding
+import com.isayevapps.alarms.presentation.dialogs.LabelBottomSheet
 import com.isayevapps.alarms.presentation.dialogs.RepeatBottomSheet
 import com.isayevapps.alarms.presentation.models.Alarm
 import kotlinx.coroutines.flow.collectLatest
@@ -59,11 +60,27 @@ class AddAlarmFragment : Fragment() {
             )
         }
 
+        binding.labelLinearLayout.setOnClickListener {
+            findNavController().navigate(
+                AddAlarmFragmentDirections.openLabelBottomSheetDialog(
+                    label = viewModel.getLabel()
+                )
+            )
+        }
+
         setFragmentResultListener(RepeatBottomSheet.REQUEST_REPEAT_KEY) { _, bundle ->
             val newRepeat =
                 bundle.customGetSerializable<String>(RepeatBottomSheet.BUNDLE_REPEAT_KEY)
             newRepeat?.let {
                 viewModel.setRepeat(it)
+            }
+        }
+
+        setFragmentResultListener(LabelBottomSheet.REQUEST_LABEL_KEY) { _, bundle ->
+            val newLabel =
+                bundle.customGetSerializable<String>(LabelBottomSheet.BUNDLE_LABEL_KEY)
+            newLabel?.let {
+                viewModel.setLabel(it)
             }
         }
 

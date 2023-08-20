@@ -25,6 +25,9 @@
         <action
             android:id="@+id/openRepeatBottomSheetDialog"
             app:destination="@id/repeatBottomSheet" />
+        <action
+            android:id="@+id/openLabelBottomSheetDialog"
+            app:destination="@id/labelBottomSheet" />
     </fragment>
     <fragment
         android:id="@+id/alarmDetailFragment"
@@ -38,6 +41,15 @@
         tools:layout="@layout/repeat_bottom_sheet">
         <argument
             android:name="frequency"
+            app:argType="string" />
+    </dialog>
+    <dialog
+        android:id="@+id/labelBottomSheet"
+        android:name="com.isayevapps.alarms.presentation.dialogs.LabelBottomSheet"
+        android:label="label_bottom_sheet"
+        tools:layout="@layout/label_bottom_sheet">
+        <argument
+            android:name="label"
             app:argType="string" />
     </dialog>
 </navigation>

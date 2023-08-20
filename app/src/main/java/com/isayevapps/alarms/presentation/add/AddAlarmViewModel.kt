@@ -31,4 +31,6 @@ class AddAlarmViewModel : ViewModel() {
 
     fun getFrequency() = _alarm.value.repeat
 
+    fun getLabel() = _alarm.value.label
+
 }
