@@ -1,4 +1,4 @@
-package com.isayevapps.alarms.presentation.dialogs
+package com.isayevapps.alarms.presentation.ui.dialogs
 
 import android.os.Bundle
 import android.view.LayoutInflater

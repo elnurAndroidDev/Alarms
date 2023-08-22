@@ -1,4 +1,4 @@
-package com.isayevapps.alarms.presentation.add
+package com.isayevapps.alarms.presentation.ui.add
 
 import android.os.Build
 import android.os.Bundle
@@ -19,9 +19,9 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.isayevapps.alarms.R
 import com.isayevapps.alarms.databinding.FragmentAddAlarmBinding
-import com.isayevapps.alarms.presentation.dialogs.LabelBottomSheet
-import com.isayevapps.alarms.presentation.dialogs.RepeatBottomSheet
 import com.isayevapps.alarms.presentation.models.Alarm
+import com.isayevapps.alarms.presentation.ui.dialogs.LabelBottomSheet
+import com.isayevapps.alarms.presentation.ui.dialogs.RepeatBottomSheet
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.io.Serializable
@@ -48,8 +48,12 @@ class AddAlarmFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupMenu()
 
-        binding.vibrateSwitch.setOnCheckedChangeListener { _, checked ->
-            viewModel.setVibrationEnabled(checked)
+        binding.timePicker.setOnTimeChangedListener { _, hours, mins ->
+            viewModel.setTime(hours, mins)
+        }
+
+        binding.ringtoneLinearLayout.setOnClickListener {
+            findNavController().navigate(R.id.openRingtoneFragment)
         }
 
         binding.repeatLinearLayout.setOnClickListener {
@@ -60,8 +64,8 @@ class AddAlarmFragment : Fragment() {
             )
         }
 
-        binding.timePicker.setOnTimeChangedListener { _, hours, mins ->
-            viewModel.setTime(hours, mins)
+        binding.vibrateSwitch.setOnCheckedChangeListener { _, checked ->
+            viewModel.setVibrationEnabled(checked)
         }
 
         binding.labelLinearLayout.setOnClickListener {

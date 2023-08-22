@@ -6,6 +6,6 @@
     <corners android:radius="16dp" />
     <stroke
         android:width="2dp"
-        android:color="?attr/colorPrimary" />
+        android:color="@color/my_light_primary" />
 
 </shape>

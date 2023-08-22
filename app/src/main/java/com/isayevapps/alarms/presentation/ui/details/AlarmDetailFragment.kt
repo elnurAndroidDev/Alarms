@@ -1,4 +1,4 @@
-package com.isayevapps.alarms.presentation.details
+package com.isayevapps.alarms.presentation.ui.details
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.isayevapps.alarms.presentation.add
+package com.isayevapps.alarms.presentation.ui.add
 
 import androidx.lifecycle.ViewModel
 import com.isayevapps.alarms.presentation.models.Alarm

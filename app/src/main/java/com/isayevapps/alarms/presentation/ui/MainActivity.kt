@@ -1,4 +1,4 @@
-package com.isayevapps.alarms.presentation
+package com.isayevapps.alarms.presentation.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -20,5 +20,6 @@ class MainActivity : AppCompatActivity() {
         val navController = navHost.navController
         val appBarConfig = AppBarConfiguration(navController.graph)
         toolbar.setupWithNavController(navController, appBarConfig)
+
     }
 }

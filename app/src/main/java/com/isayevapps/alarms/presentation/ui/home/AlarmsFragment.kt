@@ -1,4 +1,4 @@
-package com.isayevapps.alarms.presentation.home
+package com.isayevapps.alarms.presentation.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

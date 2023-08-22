@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/alarmsFragment"
-        android:name="com.isayevapps.alarms.presentation.home.AlarmsFragment"
+        android:name="com.isayevapps.alarms.presentation.ui.home.AlarmsFragment"
         android:label="Alarms"
         tools:layout="@layout/fragment_alarms">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/addAlarmFragment"
-        android:name="com.isayevapps.alarms.presentation.add.AddAlarmFragment"
+        android:name="com.isayevapps.alarms.presentation.ui.add.AddAlarmFragment"
         android:label="Add alarm"
         tools:layout="@layout/fragment_add_alarm">
         <action
@@ -28,15 +28,18 @@
         <action
             android:id="@+id/openLabelBottomSheetDialog"
             app:destination="@id/labelBottomSheet" />
+        <action
+            android:id="@+id/openRingtoneFragment"
+            app:destination="@id/ringtoneFragment" />
     </fragment>
     <fragment
         android:id="@+id/alarmDetailFragment"
-        android:name="com.isayevapps.alarms.presentation.details.AlarmDetailFragment"
+        android:name="com.isayevapps.alarms.presentation.ui.details.AlarmDetailFragment"
         android:label="Edit alarm"
         tools:layout="@layout/fragment_alarm_detail" />
     <dialog
         android:id="@+id/repeatBottomSheet"
-        android:name="com.isayevapps.alarms.presentation.dialogs.RepeatBottomSheet"
+        android:name="com.isayevapps.alarms.presentation.ui.dialogs.RepeatBottomSheet"
         android:label="RepeatBottomSheet"
         tools:layout="@layout/repeat_bottom_sheet">
         <argument
@@ -45,11 +48,20 @@
     </dialog>
     <dialog
         android:id="@+id/labelBottomSheet"
-        android:name="com.isayevapps.alarms.presentation.dialogs.LabelBottomSheet"
+        android:name="com.isayevapps.alarms.presentation.ui.dialogs.LabelBottomSheet"
         android:label="label_bottom_sheet"
         tools:layout="@layout/label_bottom_sheet">
         <argument
             android:name="label"
             app:argType="string" />
     </dialog>
+    <fragment
+        android:id="@+id/ringtoneFragment"
+        android:name="com.isayevapps.alarms.presentation.ui.ringtone.RingtoneFragment"
+        android:label="Choose ringtone"
+        tools:layout="@layout/fragment_ringtone">
+        <argument
+            android:name="ringtone"
+            app:argType="string" />
+    </fragment>
 </navigation>
