@@ -2,11 +2,17 @@ package com.isayevapps.alarms.presentation.models
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes
+import com.isayevapps.alarms.R
 import com.isayevapps.alarms.presentation.ui.ringtone.RingtoneRVItem
+import java.io.Serializable
 
 data class Ringtone(
-    val name: String, @DrawableRes val image: Int, @RawRes val ringtone: Int
-) {
+    val name: String = "Default ringtone",
+    @DrawableRes
+    val image: Int = R.drawable.gym_wakeup,
+    @RawRes
+    val ringtone: Int = R.raw.gym_wakeup
+) : Serializable {
     fun toRingtoneRVItem(): RingtoneRVItem {
         return RingtoneRVItem(name, image, ringtone, false)
     }

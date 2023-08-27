@@ -2,6 +2,7 @@ package com.isayevapps.alarms.presentation.ui.ringtone
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes
+import com.isayevapps.alarms.presentation.models.Ringtone
 
 data class RingtoneRVItem(
     val name: String,
@@ -10,4 +11,8 @@ data class RingtoneRVItem(
     @RawRes
     val ringtone: Int,
     var selected: Boolean
-)
+) {
+    fun toRingtone(): Ringtone {
+        return Ringtone(name, image, ringtone)
+    }
+}

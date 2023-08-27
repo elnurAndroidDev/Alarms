@@ -20,8 +20,10 @@ import androidx.navigation.fragment.findNavController
 import com.isayevapps.alarms.R
 import com.isayevapps.alarms.databinding.FragmentAddAlarmBinding
 import com.isayevapps.alarms.presentation.models.Alarm
+import com.isayevapps.alarms.presentation.models.Ringtone
 import com.isayevapps.alarms.presentation.ui.dialogs.LabelBottomSheet
 import com.isayevapps.alarms.presentation.ui.dialogs.RepeatBottomSheet
+import com.isayevapps.alarms.presentation.ui.ringtone.RingtoneFragment
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.io.Serializable
@@ -76,6 +78,14 @@ class AddAlarmFragment : Fragment() {
             )
         }
 
+        setFragmentResultListener(RingtoneFragment.REQUEST_RINGTONE_KEY) { _, bundle ->
+            val newRepeat =
+                bundle.customGetSerializable<Ringtone>(RingtoneFragment.BUNDLE_RINGTONE_KEY)
+            newRepeat?.let {
+                viewModel.setRingtone(it)
+            }
+        }
+
         setFragmentResultListener(RepeatBottomSheet.REQUEST_REPEAT_KEY) { _, bundle ->
             val newRepeat =
                 bundle.customGetSerializable<String>(RepeatBottomSheet.BUNDLE_REPEAT_KEY)
@@ -115,7 +125,7 @@ class AddAlarmFragment : Fragment() {
             hour = alarm.time.hours
             minute = alarm.time.mins
         }
-        binding.ringtoneNameTextView.text = alarm.ringtone
+        binding.ringtoneNameTextView.text = alarm.ringtone.name
         binding.repeatFrequencyTextView.text = alarm.repeat
         binding.labelTextView.text = if (alarm.label == "") "Enter label" else alarm.label
     }

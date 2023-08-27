@@ -10,7 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.isayevapps.alarms.R
 import com.isayevapps.alarms.databinding.ItemRingtoneBinding
 
-class RingtoneAdapter(private val context: Context, private val ringtones: List<RingtoneRVItem>) :
+class RingtoneAdapter(
+    private val context: Context,
+    private val ringtones: List<RingtoneRVItem>,
+    private val setFragmentResult: (RingtoneRVItem) -> Unit
+) :
     RecyclerView.Adapter<RingtoneAdapter.RingtoneViewHolder>() {
 
     private var mediaPlayer: MediaPlayer? = null
@@ -67,6 +71,7 @@ class RingtoneAdapter(private val context: Context, private val ringtones: List<
                     }
                     currentRingtonePos = pos
                     ringtones[currentRingtonePos].selected = true
+                    setFragmentResult(ringtone)
                 }
             }
         }

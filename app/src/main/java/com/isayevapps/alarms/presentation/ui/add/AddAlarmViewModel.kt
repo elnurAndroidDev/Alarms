@@ -1,7 +1,9 @@
 package com.isayevapps.alarms.presentation.ui.add
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.isayevapps.alarms.presentation.models.Alarm
+import com.isayevapps.alarms.presentation.models.Ringtone
 import com.isayevapps.alarms.presentation.models.Time
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -11,6 +13,13 @@ class AddAlarmViewModel : ViewModel() {
     private val _alarm = MutableStateFlow(Alarm())
     val alarm = _alarm.asStateFlow()
 
+
+    fun setRingtone(ringtone: Ringtone) {
+        Log.d("MyTaggg", ringtone.name)
+        _alarm.update { oldValue ->
+            oldValue.copy(ringtone = ringtone)
+        }
+    }
 
     fun setLabel(label: String) {
         _alarm.update { oldValue ->
