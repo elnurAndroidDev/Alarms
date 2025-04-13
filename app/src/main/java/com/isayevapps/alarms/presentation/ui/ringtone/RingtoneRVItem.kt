@@ -2,7 +2,7 @@ package com.isayevapps.alarms.presentation.ui.ringtone
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes
-import com.isayevapps.alarms.presentation.models.Ringtone
+import com.isayevapps.alarms.domain.models.Ringtone
 
 data class RingtoneRVItem(
     val name: String,

@@ -1,4 +1,4 @@
-package com.isayevapps.alarms.presentation.models
+package com.isayevapps.alarms.domain.models
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes

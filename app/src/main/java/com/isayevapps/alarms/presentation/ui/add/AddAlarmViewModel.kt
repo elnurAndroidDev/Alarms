@@ -2,9 +2,9 @@ package com.isayevapps.alarms.presentation.ui.add
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.isayevapps.alarms.presentation.models.Alarm
-import com.isayevapps.alarms.presentation.models.Ringtone
-import com.isayevapps.alarms.presentation.models.Time
+import com.isayevapps.alarms.domain.models.Alarm
+import com.isayevapps.alarms.domain.models.Ringtone
+import com.isayevapps.alarms.domain.models.Time
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update

@@ -2,15 +2,16 @@ package com.isayevapps.alarms.presentation.ui.ringtone
 
 import androidx.lifecycle.ViewModel
 import com.isayevapps.alarms.R
-import com.isayevapps.alarms.presentation.models.Ringtone
+import com.isayevapps.alarms.domain.models.Ringtone
+import com.isayevapps.alarms.domain.usecases.GetRingtonesUsecase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class RingtoneViewModel : ViewModel() {
+@HiltViewModel
+class RingtoneViewModel @Inject constructor(private val getRingtonesUsecase: GetRingtonesUsecase) : ViewModel() {
 
     fun getRingtones(): List<Ringtone> {
-        val ringtones = arrayListOf<Ringtone>()
-        ringtones.add(Ringtone("Wake up!!!", R.drawable.gym_wakeup, R.raw.gym_wakeup))
-        ringtones.add(Ringtone("Get up, stupid shit!!!", R.drawable.getup_stupid, R.raw.getup_stupid))
-        return ringtones
+        return getRingtonesUsecase()
     }
 
 }

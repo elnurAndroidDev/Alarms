@@ -10,7 +10,9 @@ import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.isayevapps.alarms.databinding.FragmentRingtoneBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RingtoneFragment : Fragment() {
 
     private var _binding: FragmentRingtoneBinding? = null

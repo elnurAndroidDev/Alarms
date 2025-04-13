@@ -19,8 +19,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.isayevapps.alarms.R
 import com.isayevapps.alarms.databinding.FragmentAddAlarmBinding
-import com.isayevapps.alarms.presentation.models.Alarm
-import com.isayevapps.alarms.presentation.models.Ringtone
+import com.isayevapps.alarms.domain.models.Alarm
+import com.isayevapps.alarms.domain.models.Ringtone
 import com.isayevapps.alarms.presentation.ui.dialogs.LabelBottomSheet
 import com.isayevapps.alarms.presentation.ui.dialogs.RepeatBottomSheet
 import com.isayevapps.alarms.presentation.ui.ringtone.RingtoneFragment
