@@ -24,7 +24,7 @@ class RingtoneAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(ringtone: RingtoneRVItem, pos: Int) {
             binding.ringtoneNameTextView.text = ringtone.name
-            binding.ringtoneImageView.setImageResource(ringtone.image)
+            ringtone.image?.let { binding.ringtoneImageView.setImageResource(ringtone.image) }
 
             if (!ringtone.selected) {
                 binding.ringtoneContainer.background = null
@@ -34,13 +34,13 @@ class RingtoneAdapter(
 
             binding.ringtoneContainer.setOnClickListener {
                 if (currentRingtonePos == pos) {
-                    val isPlaying = mediaPlayer?.isPlaying ?: false
+                    val isPlaying = mediaPlayer?.isPlaying == false
                     if (isPlaying) {
                         mediaPlayer?.stop()
                         binding.soundAnimView.visibility = View.INVISIBLE
                         binding.soundAnimView.pauseAnimation()
                     } else {
-                        mediaPlayer = MediaPlayer.create(context, ringtone.ringtone)
+                        mediaPlayer = MediaPlayer.create(context, ringtone.ringtoneUri.toInt())
                         mediaPlayer?.setOnCompletionListener {
                             binding.soundAnimView.visibility = View.INVISIBLE
                             binding.soundAnimView.pauseAnimation()
@@ -51,7 +51,7 @@ class RingtoneAdapter(
                     }
                 } else {
                     mediaPlayer?.stop()
-                    mediaPlayer = MediaPlayer.create(context, ringtone.ringtone)
+                    mediaPlayer = MediaPlayer.create(context, ringtone.ringtoneUri.toInt())
                     mediaPlayer?.setOnCompletionListener {
                         binding.soundAnimView.visibility = View.INVISIBLE
                         binding.soundAnimView.pauseAnimation()

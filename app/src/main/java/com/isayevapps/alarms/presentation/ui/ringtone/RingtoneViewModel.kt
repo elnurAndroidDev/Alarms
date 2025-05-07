@@ -9,9 +9,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RingtoneViewModel @Inject constructor(private val getRingtonesUsecase: GetRingtonesUsecase) : ViewModel() {
-
     fun getRingtones(): List<Ringtone> {
         return getRingtonesUsecase()
     }
-
 }

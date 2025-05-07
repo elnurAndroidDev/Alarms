@@ -1,5 +1,6 @@
 package com.isayevapps.alarms.presentation.ui.home
 
+import android.Manifest
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -7,6 +8,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresPermission
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -31,6 +33,8 @@ class AlarmsFragment : Fragment() {
         return binding.root
     }
 
+
+    @RequiresPermission(Manifest.permission.SCHEDULE_EXACT_ALARM)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupMenu()

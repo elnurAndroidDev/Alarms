@@ -61,7 +61,7 @@ class AddAlarmFragment : Fragment() {
         binding.repeatLinearLayout.setOnClickListener {
             findNavController().navigate(
                 AddAlarmFragmentDirections.openRepeatBottomSheetDialog(
-                    frequency = viewModel.getFrequency()
+                    frequency = viewModel.getRepeat()
                 )
             )
         }
@@ -139,6 +139,7 @@ class AddAlarmFragment : Fragment() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
                     R.id.save_alarm -> {
+                        setAlarm()
                         Toast.makeText(requireContext(), "Saved", Toast.LENGTH_SHORT).show()
                         true
                     }
@@ -148,6 +149,10 @@ class AddAlarmFragment : Fragment() {
             }
 
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
+    }
+
+    private fun setAlarm() {
+
     }
 
     override fun onDestroyView() {
