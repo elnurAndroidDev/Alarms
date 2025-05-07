@@ -7,6 +7,7 @@ import com.isayevapps.alarms.domain.models.Ringtone
 import com.isayevapps.alarms.domain.models.Time
 import com.isayevapps.alarms.domain.usecases.AddAlarmUsecase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -53,6 +54,9 @@ class AddAlarmViewModel @Inject constructor(
     }
 
     fun addAlarm() = viewModelScope.launch {
+        with(Dispatchers.IO) {
+            addAlarmUsecase(_alarm.value)
+        }
     }
 
     fun getRepeat() = _alarm.value.repeat

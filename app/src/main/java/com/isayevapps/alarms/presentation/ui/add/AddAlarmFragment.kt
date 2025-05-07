@@ -13,6 +13,7 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
+import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -24,10 +25,12 @@ import com.isayevapps.alarms.domain.models.Ringtone
 import com.isayevapps.alarms.presentation.ui.dialogs.LabelBottomSheet
 import com.isayevapps.alarms.presentation.ui.dialogs.RepeatBottomSheet
 import com.isayevapps.alarms.presentation.ui.ringtone.RingtoneFragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.io.Serializable
 
+@AndroidEntryPoint
 class AddAlarmFragment : Fragment() {
 
     private var _binding: FragmentAddAlarmBinding? = null
@@ -36,7 +39,7 @@ class AddAlarmFragment : Fragment() {
             "Binding is null"
         }
 
-    private val viewModel: AddAlarmViewModel by viewModels()
+    private val viewModel: AddAlarmViewModel by hiltNavGraphViewModels(R.id.navgraph)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -140,7 +143,8 @@ class AddAlarmFragment : Fragment() {
                 return when (menuItem.itemId) {
                     R.id.save_alarm -> {
                         setAlarm()
-                        Toast.makeText(requireContext(), "Saved", Toast.LENGTH_SHORT).show()
+                        viewModel.addAlarm()
+                        Toast.makeText(requireContext(), "Alarm saved", Toast.LENGTH_SHORT).show()
                         true
                     }
 
